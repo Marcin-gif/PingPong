@@ -29,28 +29,27 @@ namespace PingPong.Models
         {
             PositionBall.move(speedX, speedY);
 
+            //kolizja z górą lub dołem ekranu
             if(PositionBall.Y <= 0 || PositionBall.Y + BallShape.Height >= canvasHeight)
             {
                 speedY = -speedY;
             }
 
-            if(CollisionDetector.IsCollision(PositionBall, BallShape.Width, BallShape.Height, p1.PaddlePlayer.PositionPaddle, p1.PaddlePlayer.Width, p1.PaddlePlayer.Height) ||
-               CollisionDetector.IsCollision(PositionBall, BallShape.Width, BallShape.Height, p2.PaddlePlayer.PositionPaddle, p2.PaddlePlayer.Width, p2.PaddlePlayer.Height))
-            
+            if(CollisionDetector.CheckPaddleCollision(this, p1.PaddlePlayer) || CollisionDetector.CheckPaddleCollision(this,p2.PaddlePlayer))
             {
-                speedX = -speedX;
+               speedX = -speedX;
             }
 
-            if(PositionBall.X <= 0 || PositionBall.X + BallShape.Width >=canvasWidth)
+            if(PositionBall.X <= 0 || PositionBall.X + BallShape.Width >= canvasWidth)
             {
                 if(PositionBall.X <= 0)
                 {
                     p2.IncreaseScore();
-                    p2.PaddlePlayer.Speed += 1;
+                    p2.PaddlePlayer.Speed += 10;
                 }else if (PositionBall.X+BallShape.Width >= canvasWidth)
                 {
                     p1.IncreaseScore();
-                    p1.PaddlePlayer.Speed += 1;
+                    p1.PaddlePlayer.Speed += 10;
                 }
                 IncreaseSpeed();
                 ResetBallPosition(canvasWidth / 2, canvasHeight / 2);

@@ -19,7 +19,7 @@ namespace PingPong.Models
         public Paddle(Rectangle paddleShape)
         {
             PaddleShape = paddleShape;
-            Speed = 2;
+            Speed = 10;
             PositionPaddle = new Position(Canvas.GetLeft(PaddleShape), Canvas.GetTop(PaddleShape));
         }
 

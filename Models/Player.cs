@@ -34,11 +34,11 @@ namespace PingPong.Models
         {
             if(key == UpKey)
             {
-                PaddlePlayer.Speed = -10;
+                PaddlePlayer.Speed = -20;
             }
             else if(key==DownKey)
             {
-                PaddlePlayer.Speed = 10;
+                PaddlePlayer.Speed = 20;
             }else
             {
                 PaddlePlayer.Speed = 0;

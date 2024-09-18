@@ -66,7 +66,7 @@ namespace PingPong
             {
                 EndGame();
             }
-            else if(player1.Score == 2 || player2.Score == 2)
+            else if(player1.Score == 5 || player2.Score == 5)
             {
                 EndGame();
             }
@@ -79,12 +79,12 @@ namespace PingPong
             ball.UpdatePosition(canvasWidth, canvasHeight, player1, player2);
 
             // Zaktualizuj położenie paletek i piłki
-            Canvas.SetLeft(Paddle1, player1.PaddlePlayer.PositionPaddle.X);
+            /*Canvas.SetLeft(Paddle1, player1.PaddlePlayer.PositionPaddle.X);
             Canvas.SetTop(Paddle1, player1.PaddlePlayer.PositionPaddle.Y);
             Canvas.SetLeft(Paddle2, player2.PaddlePlayer.PositionPaddle.X);
             Canvas.SetTop(Paddle2, player2.PaddlePlayer.PositionPaddle.Y);
             Canvas.SetLeft(Ball, ball.PositionBall.X);
-            Canvas.SetTop(Ball, ball.PositionBall.Y);
+            Canvas.SetTop(Ball, ball.PositionBall.Y);*/
 
             // Opcjonalnie zaktualizuj wynik
             Player1.Content = player1.Score;
